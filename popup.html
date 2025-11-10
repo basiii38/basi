@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Expander</title>
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Popup-specific styles -->
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- ========================================================================
+       HEADER SECTION
+       - Extension title
+       - Sync status indicator
+       - Quick action buttons
+       ======================================================================== -->
+  <header class="popup-header">
+    <h1 class="popup-title">Text Expander</h1>
+
+    <!-- Sync status indicator -->
+    <div class="sync-status" id="syncStatus">
+      <!-- TODO: Display sync status (syncing, synced, error) -->
+      <span class="sync-icon" id="syncIcon"></span>
+      <span class="sync-text" id="syncText">Synced</span>
+    </div>
+
+    <!-- Quick actions -->
+    <div class="header-actions">
+      <!-- TODO: Add sync now button -->
+      <button id="syncNowBtn" class="icon-btn" title="Sync now">
+        <span class="icon">🔄</span>
+      </button>
+
+      <!-- TODO: Add settings button -->
+      <button id="settingsBtn" class="icon-btn" title="Settings">
+        <span class="icon">⚙️</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       SEARCH SECTION
+       - Search/filter expansions
+       - Quick add button
+       ======================================================================== -->
+  <div class="search-section">
+    <!-- Search input -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="Search expansions..."
+      >
+      <!-- TODO: Add search icon -->
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <!-- Add new expansion button -->
+    <button id="addExpansionBtn" class="btn btn-primary">
+      <span class="btn-icon">+</span>
+      <span class="btn-text">Add</span>
+    </button>
+  </div>
+
+  <!-- ========================================================================
+       EXPANSIONS LIST
+       - Display all expansions
+       - Each item shows shortcut and expansion preview
+       - Actions: edit, delete, toggle enabled
+       ======================================================================== -->
+  <main class="popup-main">
+    <!-- Loading state -->
+    <div id="loadingState" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading expansions...</p>
+    </div>
+
+    <!-- Empty state (no expansions) -->
+    <div id="emptyState" class="empty-state" style="display: none;">
+      <div class="empty-icon">📝</div>
+      <h3>No Expansions Yet</h3>
+      <p>Create your first text expansion to get started!</p>
+      <button class="btn btn-primary" id="createFirstBtn">Create Expansion</button>
+    </div>
+
+    <!-- Expansions list -->
+    <div id="expansionsList" class="expansions-list" style="display: none;">
+      <!-- TODO: Dynamically populate with expansion items -->
+      <!-- Each item should have:
+           - Shortcut text
+           - Expansion preview
+           - Enabled toggle
+           - Edit button
+           - Delete button
+      -->
+    </div>
+
+    <!-- Error state -->
+    <div id="errorState" class="error-state" style="display: none;">
+      <div class="error-icon">⚠️</div>
+      <h3>Something went wrong</h3>
+      <p id="errorMessage">Unable to load expansions</p>
+      <button class="btn btn-secondary" id="retryBtn">Retry</button>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       EXPANSION FORM MODAL
+       - Add/edit expansion
+       - Fields: shortcut, expansion text
+       - Save/cancel buttons
+       ======================================================================== -->
+  <div id="expansionModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add Expansion</h2>
+        <button class="close-btn" id="closeModalBtn">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="expansionForm">
+          <!-- Shortcut input -->
+          <div class="form-group">
+            <label for="shortcutInput">Shortcut</label>
+            <input
+              type="text"
+              id="shortcutInput"
+              class="form-input"
+              placeholder="e.g., @email"
+              required
+            >
+            <small class="form-help">Type this to trigger the expansion</small>
+          </div>
+
+          <!-- Expansion text -->
+          <div class="form-group">
+            <label for="expansionInput">Expansion</label>
+            <textarea
+              id="expansionInput"
+              class="form-textarea"
+              placeholder="e.g., john@example.com"
+              rows="4"
+              required
+            ></textarea>
+            <small class="form-help">The text that will replace the shortcut</small>
+          </div>
+
+          <!-- Enabled toggle -->
+          <div class="form-group">
+            <label class="toggle-label">
+              <input type="checkbox" id="enabledToggle" checked>
+              <span class="toggle-switch"></span>
+              <span class="toggle-text">Enabled</span>
+            </label>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+        <button class="btn btn-primary" id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       FOOTER
+       - Statistics (total expansions, etc.)
+       - Link to full options page
+       ======================================================================== -->
+  <footer class="popup-footer">
+    <div class="stats">
+      <span id="expansionCount">0 expansions</span>
+    </div>
+    <a href="#" id="openOptionsLink" class="link">Open Settings</a>
+  </footer>
+
+  <!-- JavaScript module -->
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

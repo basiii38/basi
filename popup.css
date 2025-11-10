@@ -1,0 +1,468 @@
+/**
+ * Popup-specific styles for Text Expander Extension
+ *
+ * This file contains styles specific to the popup interface.
+ * Shared styles are in styles.css
+ */
+
+/* ============================================================================
+   POPUP CONTAINER
+   ============================================================================ */
+
+body {
+  width: 400px;
+  min-height: 500px;
+  max-height: 600px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* TODO: Add font family, colors from shared styles */
+}
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+
+.popup-header {
+  /* TODO: Add header styling */
+  /* TODO: Flexbox for title, status, and actions */
+  /* TODO: Padding and background color */
+  /* TODO: Border bottom */
+}
+
+.popup-title {
+  /* TODO: Font size and weight */
+  /* TODO: Margin */
+}
+
+/* Sync Status Indicator */
+.sync-status {
+  /* TODO: Display flex for icon + text */
+  /* TODO: Spacing */
+  /* TODO: Font size */
+}
+
+.sync-icon {
+  /* TODO: Size and margin */
+  /* TODO: Different icons for different states */
+}
+
+.sync-status.syncing .sync-icon {
+  /* TODO: Spinning animation */
+}
+
+.sync-status.error .sync-icon {
+  /* TODO: Error color */
+}
+
+.sync-text {
+  /* TODO: Text styling */
+}
+
+/* Header Actions */
+.header-actions {
+  /* TODO: Flexbox for buttons */
+  /* TODO: Spacing */
+}
+
+.icon-btn {
+  /* TODO: Button styling */
+  /* TODO: Size and padding */
+  /* TODO: Hover effects */
+  /* TODO: Cursor pointer */
+}
+
+/* ============================================================================
+   SEARCH SECTION
+   ============================================================================ */
+
+.search-section {
+  /* TODO: Padding */
+  /* TODO: Flexbox for search input + add button */
+  /* TODO: Border bottom */
+}
+
+.search-container {
+  /* TODO: Flex grow */
+  /* TODO: Position relative for icon */
+}
+
+.search-input {
+  /* TODO: Full width */
+  /* TODO: Padding (extra padding-left for icon) */
+  /* TODO: Border styling */
+  /* TODO: Border radius */
+  /* TODO: Focus styles */
+}
+
+.search-icon {
+  /* TODO: Position absolute */
+  /* TODO: Left positioning */
+  /* TODO: Vertical centering */
+}
+
+#addExpansionBtn {
+  /* TODO: Margin left */
+  /* TODO: Padding */
+  /* TODO: Icon + text layout */
+}
+
+/* ============================================================================
+   MAIN CONTENT AREA
+   ============================================================================ */
+
+.popup-main {
+  /* TODO: Max height with scroll */
+  /* TODO: Overflow auto */
+  /* TODO: Padding */
+}
+
+/* ============================================================================
+   LOADING STATE
+   ============================================================================ */
+
+.loading-state {
+  /* TODO: Center content */
+  /* TODO: Padding */
+}
+
+.spinner {
+  /* TODO: Create loading spinner */
+  /* TODO: Rotating animation */
+  /* TODO: Size and colors */
+}
+
+/* ============================================================================
+   EMPTY STATE
+   ============================================================================ */
+
+.empty-state {
+  /* TODO: Center content */
+  /* TODO: Padding */
+  /* TODO: Text alignment */
+}
+
+.empty-icon {
+  /* TODO: Large font size */
+  /* TODO: Margin bottom */
+}
+
+.empty-state h3 {
+  /* TODO: Font styling */
+  /* TODO: Margin */
+}
+
+.empty-state p {
+  /* TODO: Color and size */
+  /* TODO: Margin */
+}
+
+/* ============================================================================
+   ERROR STATE
+   ============================================================================ */
+
+.error-state {
+  /* TODO: Similar to empty state */
+  /* TODO: Error colors */
+}
+
+.error-icon {
+  /* TODO: Large font size */
+  /* TODO: Error color */
+}
+
+/* ============================================================================
+   EXPANSIONS LIST
+   ============================================================================ */
+
+.expansions-list {
+  /* TODO: List styling */
+  /* TODO: Spacing between items */
+}
+
+.expansion-item {
+  /* TODO: Border and padding */
+  /* TODO: Border radius */
+  /* TODO: Margin bottom */
+  /* TODO: Hover effect */
+  /* TODO: Background color */
+}
+
+.expansion-item:hover {
+  /* TODO: Hover background */
+}
+
+.expansion-header {
+  /* TODO: Flexbox for layout */
+  /* TODO: Justify space between */
+  /* TODO: Align items center */
+}
+
+.expansion-shortcut {
+  /* TODO: Font weight bold */
+  /* TODO: Font size */
+  /* TODO: Color */
+  /* TODO: Code/monospace styling */
+}
+
+.expansion-actions {
+  /* TODO: Flexbox for buttons */
+  /* TODO: Gap between buttons */
+}
+
+.expansion-preview {
+  /* TODO: Margin top */
+  /* TODO: Font size smaller */
+  /* TODO: Color muted */
+  /* TODO: Text overflow ellipsis */
+  /* TODO: White-space nowrap */
+}
+
+.expansion-item.disabled {
+  /* TODO: Opacity reduced */
+}
+
+/* Action Buttons */
+.action-btn {
+  /* TODO: Small button styling */
+  /* TODO: Padding */
+  /* TODO: Border */
+  /* TODO: Hover effects */
+}
+
+.edit-btn {
+  /* TODO: Edit button specific colors */
+}
+
+.delete-btn {
+  /* TODO: Delete button specific colors (red) */
+}
+
+/* Toggle Switch */
+.toggle-switch-small {
+  /* TODO: Small toggle switch styling */
+  /* TODO: Width and height */
+  /* TODO: Border radius */
+  /* TODO: Background colors for on/off */
+}
+
+/* ============================================================================
+   MODAL
+   ============================================================================ */
+
+.modal {
+  /* TODO: Position fixed, full screen overlay */
+  /* TODO: Background color with opacity */
+  /* TODO: Z-index high */
+  /* TODO: Display flex, center content */
+}
+
+.modal-content {
+  /* TODO: Background white */
+  /* TODO: Max width */
+  /* TODO: Border radius */
+  /* TODO: Box shadow */
+  /* TODO: Padding */
+  /* TODO: Max height with scroll */
+}
+
+.modal-header {
+  /* TODO: Flexbox for title and close button */
+  /* TODO: Justify space between */
+  /* TODO: Padding bottom */
+  /* TODO: Border bottom */
+}
+
+.modal-header h2 {
+  /* TODO: Font size */
+  /* TODO: Margin 0 */
+}
+
+.close-btn {
+  /* TODO: Large, clickable X button */
+  /* TODO: No background */
+  /* TODO: Hover effect */
+  /* TODO: Font size large */
+}
+
+.modal-body {
+  /* TODO: Padding */
+  /* TODO: Max height with scroll if needed */
+}
+
+.modal-footer {
+  /* TODO: Flexbox for buttons */
+  /* TODO: Justify end or space between */
+  /* TODO: Padding top */
+  /* TODO: Border top */
+  /* TODO: Gap between buttons */
+}
+
+/* ============================================================================
+   FORM ELEMENTS
+   ============================================================================ */
+
+.form-group {
+  /* TODO: Margin bottom */
+}
+
+.form-group label {
+  /* TODO: Display block */
+  /* TODO: Margin bottom */
+  /* TODO: Font weight */
+}
+
+.form-input {
+  /* TODO: Full width */
+  /* TODO: Padding */
+  /* TODO: Border */
+  /* TODO: Border radius */
+  /* TODO: Font size */
+  /* TODO: Focus styles */
+}
+
+.form-textarea {
+  /* TODO: Same as form-input */
+  /* TODO: Resize vertical only */
+  /* TODO: Min height */
+}
+
+.form-help {
+  /* TODO: Small text */
+  /* TODO: Muted color */
+  /* TODO: Display block */
+  /* TODO: Margin top */
+}
+
+/* Toggle Label */
+.toggle-label {
+  /* TODO: Display flex */
+  /* TODO: Align items center */
+  /* TODO: Cursor pointer */
+  /* TODO: Gap between switch and text */
+}
+
+.toggle-switch {
+  /* TODO: Create custom toggle switch */
+  /* TODO: Width, height, border radius */
+  /* TODO: Background colors for on/off */
+  /* TODO: Transition */
+}
+
+.toggle-text {
+  /* TODO: Font size */
+}
+
+/* Form Validation */
+.form-group.error .form-input,
+.form-group.error .form-textarea {
+  /* TODO: Error border color */
+}
+
+.form-error {
+  /* TODO: Error text styling */
+  /* TODO: Color red */
+  /* TODO: Font size small */
+  /* TODO: Margin top */
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+.popup-footer {
+  /* TODO: Flexbox layout */
+  /* TODO: Justify space between */
+  /* TODO: Padding */
+  /* TODO: Border top */
+  /* TODO: Background color */
+}
+
+.stats {
+  /* TODO: Font size small */
+  /* TODO: Color muted */
+}
+
+.link {
+  /* TODO: Link styling */
+  /* TODO: Text decoration */
+  /* TODO: Color */
+  /* TODO: Hover effect */
+}
+
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+/* Button base styles inherited from styles.css */
+
+.btn {
+  /* TODO: Padding */
+  /* TODO: Border radius */
+  /* TODO: Cursor pointer */
+  /* TODO: Font size */
+  /* TODO: Transition */
+}
+
+.btn-primary {
+  /* TODO: Primary button colors */
+  /* TODO: Hover effects */
+}
+
+.btn-secondary {
+  /* TODO: Secondary button colors */
+  /* TODO: Hover effects */
+}
+
+.btn-icon {
+  /* TODO: Icon sizing */
+  /* TODO: Margin right */
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================================================
+   SCROLLBAR STYLING
+   ============================================================================ */
+
+.popup-main::-webkit-scrollbar {
+  /* TODO: Width */
+}
+
+.popup-main::-webkit-scrollbar-track {
+  /* TODO: Background */
+}
+
+.popup-main::-webkit-scrollbar-thumb {
+  /* TODO: Background */
+  /* TODO: Border radius */
+}
+
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================ */
+
+/* For smaller screens if needed */
+@media (max-height: 500px) {
+  /* TODO: Adjust heights and spacing */
+}

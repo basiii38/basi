@@ -1,0 +1,669 @@
+/**
+ * Options Page Styles for Text Expander Extension
+ *
+ * Full settings page with sidebar navigation and multiple sections
+ */
+
+/* ============================================================================
+   PAGE LAYOUT
+   ============================================================================ */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  /* TODO: Set colors from shared styles */
+}
+
+.options-container {
+  display: flex;
+  min-height: 100vh;
+  /* TODO: Background color */
+}
+
+/* ============================================================================
+   SIDEBAR
+   ============================================================================ */
+
+.sidebar {
+  width: 250px;
+  /* TODO: Background color */
+  /* TODO: Border right */
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-header {
+  /* TODO: Padding */
+  /* TODO: Border bottom */
+}
+
+.app-title {
+  /* TODO: Font size and weight */
+  /* TODO: Margin */
+}
+
+.app-version {
+  /* TODO: Small text */
+  /* TODO: Muted color */
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+  flex: 1;
+  /* TODO: Padding */
+  overflow-y: auto;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  /* TODO: Padding */
+  /* TODO: Cursor pointer */
+  /* TODO: Display flex for icon + text */
+  /* TODO: Align items center */
+  /* TODO: Gap between icon and text */
+  /* TODO: Border radius */
+  /* TODO: Margin bottom */
+  /* TODO: Transition */
+}
+
+.nav-item:hover {
+  /* TODO: Hover background */
+}
+
+.nav-item.active {
+  /* TODO: Active background */
+  /* TODO: Active text color */
+  /* TODO: Bold */
+}
+
+.nav-icon {
+  /* TODO: Size */
+}
+
+.nav-text {
+  /* TODO: Font size */
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  /* TODO: Padding */
+  /* TODO: Border top */
+}
+
+.user-info {
+  /* TODO: Display flex */
+  /* TODO: Align items center */
+  /* TODO: Gap */
+}
+
+.user-avatar {
+  /* TODO: Size */
+  /* TODO: Border radius (circle) */
+  /* TODO: Background color */
+  /* TODO: Default icon or initials */
+}
+
+.user-details {
+  /* TODO: Flex 1 */
+}
+
+.user-email {
+  /* TODO: Font size */
+  /* TODO: Margin */
+}
+
+/* ============================================================================
+   MAIN CONTENT
+   ============================================================================ */
+
+.main-content {
+  flex: 1;
+  /* TODO: Padding */
+  overflow-y: auto;
+}
+
+.settings-section {
+  display: none;
+  /* TODO: Max width for readability */
+  /* TODO: Margin auto for centering */
+}
+
+.settings-section.active {
+  display: block;
+}
+
+/* Section Header */
+.section-header {
+  /* TODO: Display flex */
+  /* TODO: Justify space between */
+  /* TODO: Align items center */
+  /* TODO: Margin bottom */
+  /* TODO: Padding bottom */
+  /* TODO: Border bottom */
+}
+
+.section-header h2 {
+  /* TODO: Font size */
+  /* TODO: Margin 0 */
+}
+
+.header-actions {
+  /* TODO: Display flex */
+  /* TODO: Gap between buttons */
+}
+
+/* ============================================================================
+   SETTING GROUPS
+   ============================================================================ */
+
+.setting-group {
+  /* TODO: Margin bottom */
+  /* TODO: Padding */
+  /* TODO: Background */
+  /* TODO: Border radius */
+  /* TODO: Border */
+}
+
+.setting-group h3 {
+  /* TODO: Font size */
+  /* TODO: Margin bottom */
+}
+
+.setting-description {
+  /* TODO: Font size small */
+  /* TODO: Color muted */
+  /* TODO: Margin top */
+}
+
+/* ============================================================================
+   EXPANSIONS TABLE
+   ============================================================================ */
+
+.expansions-toolbar {
+  /* TODO: Display flex */
+  /* TODO: Justify space between */
+  /* TODO: Align items center */
+  /* TODO: Margin bottom */
+  /* TODO: Gap */
+}
+
+.filter-controls {
+  /* TODO: Display flex */
+  /* TODO: Gap */
+}
+
+.expansions-table-container {
+  /* TODO: Border */
+  /* TODO: Border radius */
+  /* TODO: Overflow auto */
+  /* TODO: Max height with scroll if needed */
+}
+
+.expansions-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* TODO: Font size */
+}
+
+.expansions-table thead {
+  /* TODO: Background color */
+  /* TODO: Sticky header */
+}
+
+.expansions-table th {
+  /* TODO: Padding */
+  /* TODO: Text align left */
+  /* TODO: Font weight */
+  /* TODO: Border bottom */
+}
+
+.expansions-table td {
+  /* TODO: Padding */
+  /* TODO: Border bottom */
+}
+
+.expansions-table tbody tr:hover {
+  /* TODO: Hover background */
+}
+
+/* Bulk Actions Bar */
+.bulk-actions {
+  /* TODO: Position fixed or sticky */
+  /* TODO: Bottom positioning */
+  /* TODO: Background */
+  /* TODO: Padding */
+  /* TODO: Border */
+  /* TODO: Border radius */
+  /* TODO: Box shadow */
+  /* TODO: Display flex */
+  /* TODO: Align items center */
+  /* TODO: Gap */
+}
+
+.selected-count {
+  /* TODO: Font weight */
+}
+
+/* ============================================================================
+   AUTHENTICATION FORMS
+   ============================================================================ */
+
+.account-not-signed-in,
+.account-signed-in {
+  /* TODO: Max width */
+  /* TODO: Padding */
+}
+
+.auth-form {
+  /* TODO: Background */
+  /* TODO: Padding */
+  /* TODO: Border radius */
+  /* TODO: Border */
+  /* TODO: Margin bottom */
+}
+
+.auth-form h3 {
+  /* TODO: Margin top 0 */
+}
+
+.auth-toggle {
+  /* TODO: Text align center */
+  /* TODO: Margin top */
+}
+
+.auth-toggle a {
+  /* TODO: Link color */
+  /* TODO: Text decoration */
+}
+
+.account-info {
+  /* TODO: Background */
+  /* TODO: Padding */
+  /* TODO: Border radius */
+  /* TODO: Margin bottom */
+}
+
+.info-row {
+  /* TODO: Display flex */
+  /* TODO: Justify space between */
+  /* TODO: Padding */
+  /* TODO: Border bottom (except last) */
+}
+
+.info-row .label {
+  /* TODO: Font weight */
+}
+
+/* ============================================================================
+   SYNC STATUS
+   ============================================================================ */
+
+.sync-status-display {
+  /* TODO: Background */
+  /* TODO: Padding */
+  /* TODO: Border radius */
+  /* TODO: Border */
+  /* TODO: Margin bottom */
+}
+
+/* ============================================================================
+   IMPORT/EXPORT
+   ============================================================================ */
+
+.json-textarea {
+  width: 100%;
+  /* TODO: Padding */
+  /* TODO: Font family monospace */
+  /* TODO: Font size */
+  /* TODO: Border */
+  /* TODO: Border radius */
+  /* TODO: Resize vertical */
+}
+
+/* ============================================================================
+   ABOUT SECTION
+   ============================================================================ */
+
+.about-content {
+  /* TODO: Max width */
+}
+
+.about-description {
+  /* TODO: Font size */
+  /* TODO: Line height */
+  /* TODO: Margin bottom */
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  /* TODO: Margin bottom */
+}
+
+.info-item {
+  /* TODO: Padding */
+  /* TODO: Background */
+  /* TODO: Border radius */
+}
+
+.info-label {
+  /* TODO: Font weight */
+  /* TODO: Display block */
+}
+
+.info-value {
+  /* TODO: Font size */
+}
+
+.links-section {
+  /* TODO: Margin bottom */
+}
+
+.links-list {
+  list-style: none;
+  padding: 0;
+}
+
+.links-list li {
+  /* TODO: Margin bottom */
+}
+
+.link {
+  /* TODO: Link color */
+  /* TODO: Text decoration */
+  /* TODO: Hover effect */
+}
+
+.reset-section {
+  /* TODO: Margin top */
+  /* TODO: Padding */
+  /* TODO: Border */
+  /* TODO: Border radius */
+  /* TODO: Border color for danger */
+}
+
+.warning-text {
+  /* TODO: Color warning/danger */
+  /* TODO: Font size small */
+}
+
+/* ============================================================================
+   FORM ELEMENTS
+   ============================================================================ */
+
+.form-group {
+  /* TODO: Margin bottom */
+}
+
+.form-group label {
+  /* TODO: Display block */
+  /* TODO: Margin bottom */
+  /* TODO: Font weight */
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  /* TODO: Padding */
+  /* TODO: Border */
+  /* TODO: Border radius */
+  /* TODO: Font size */
+  /* TODO: Focus styles */
+}
+
+.form-textarea {
+  width: 100%;
+  /* TODO: Padding */
+  /* TODO: Border */
+  /* TODO: Border radius */
+  /* TODO: Resize vertical */
+  /* TODO: Font family */
+}
+
+/* Toggle Switch */
+.toggle-label {
+  display: flex;
+  align-items: center;
+  /* TODO: Cursor pointer */
+  /* TODO: Gap */
+  /* TODO: Margin bottom */
+}
+
+.toggle-switch {
+  /* TODO: Create toggle switch UI */
+  /* TODO: Width and height */
+  /* TODO: Border radius */
+  /* TODO: Background colors for on/off */
+  /* TODO: Position relative for slider */
+  /* TODO: Transition */
+}
+
+.toggle-switch::after {
+  /* TODO: Create slider dot */
+  /* TODO: Position absolute */
+  /* TODO: Size */
+  /* TODO: Border radius (circle) */
+  /* TODO: Background */
+  /* TODO: Transition */
+}
+
+input[type="checkbox"]:checked + .toggle-switch {
+  /* TODO: Background color when checked */
+}
+
+input[type="checkbox"]:checked + .toggle-switch::after {
+  /* TODO: Move slider to right */
+}
+
+/* Checkbox Group */
+.checkbox-group {
+  /* TODO: Display flex or grid */
+  /* TODO: Gap */
+}
+
+.checkbox-group label {
+  /* TODO: Display flex */
+  /* TODO: Align items center */
+  /* TODO: Gap */
+}
+
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+.btn {
+  /* TODO: Padding */
+  /* TODO: Border radius */
+  /* TODO: Border */
+  /* TODO: Cursor pointer */
+  /* TODO: Font size */
+  /* TODO: Font weight */
+  /* TODO: Transition */
+}
+
+.btn-primary {
+  /* TODO: Primary colors */
+}
+
+.btn-primary:hover {
+  /* TODO: Hover effect */
+}
+
+.btn-secondary {
+  /* TODO: Secondary colors */
+}
+
+.btn-secondary:hover {
+  /* TODO: Hover effect */
+}
+
+.btn-danger {
+  /* TODO: Danger/red colors */
+}
+
+.btn-danger:hover {
+  /* TODO: Hover effect */
+}
+
+.btn-sm {
+  /* TODO: Smaller padding */
+  /* TODO: Smaller font size */
+}
+
+/* ============================================================================
+   MODAL
+   ============================================================================ */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* TODO: Background overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  /* TODO: Background */
+  /* TODO: Max width */
+  /* TODO: Border radius */
+  /* TODO: Box shadow */
+  /* TODO: Max height with scroll */
+}
+
+.modal-header {
+  /* TODO: Display flex */
+  /* TODO: Justify space between */
+  /* TODO: Padding */
+  /* TODO: Border bottom */
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.close-btn {
+  /* TODO: Button styling */
+  /* TODO: Large size */
+  /* TODO: No background */
+  /* TODO: Hover effect */
+}
+
+.modal-body {
+  /* TODO: Padding */
+}
+
+.modal-footer {
+  /* TODO: Display flex */
+  /* TODO: Justify end or space between */
+  /* TODO: Padding */
+  /* TODO: Border top */
+  /* TODO: Gap */
+}
+
+/* ============================================================================
+   NOTIFICATION TOAST
+   ============================================================================ */
+
+.notification-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  /* TODO: Background */
+  /* TODO: Color */
+  /* TODO: Padding */
+  /* TODO: Border radius */
+  /* TODO: Box shadow */
+  /* TODO: Z-index */
+  /* TODO: Animation slide in */
+}
+
+.notification-toast.success {
+  /* TODO: Success color */
+}
+
+.notification-toast.error {
+  /* TODO: Error color */
+}
+
+.notification-toast.info {
+  /* TODO: Info color */
+}
+
+/* ============================================================================
+   STATUS BADGES
+   ============================================================================ */
+
+.badge {
+  /* TODO: Display inline-block */
+  /* TODO: Padding */
+  /* TODO: Font size small */
+  /* TODO: Border radius */
+  /* TODO: Font weight */
+}
+
+.badge-enabled {
+  /* TODO: Green/success colors */
+}
+
+.badge-disabled {
+  /* TODO: Gray/muted colors */
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .options-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  .main-content {
+    /* TODO: Adjust padding */
+  }
+}

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Expander - Settings</title>
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Options-specific styles -->
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <!-- ========================================================================
+       PAGE CONTAINER
+       Full settings page with sidebar navigation
+       ======================================================================== -->
+  <div class="options-container">
+
+    <!-- ======================================================================
+         SIDEBAR NAVIGATION
+         - Different settings sections
+         - Account info
+         ====================================================================== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="app-title">Text Expander</h1>
+        <p class="app-version">v1.0.0</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item active" data-section="expansions">
+            <span class="nav-icon">📝</span>
+            <span class="nav-text">Expansions</span>
+          </li>
+          <li class="nav-item" data-section="account">
+            <span class="nav-icon">👤</span>
+            <span class="nav-text">Account</span>
+          </li>
+          <li class="nav-item" data-section="sync">
+            <span class="nav-icon">🔄</span>
+            <span class="nav-text">Sync</span>
+          </li>
+          <li class="nav-item" data-section="preferences">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-text">Preferences</span>
+          </li>
+          <li class="nav-item" data-section="import-export">
+            <span class="nav-icon">💾</span>
+            <span class="nav-text">Import/Export</span>
+          </li>
+          <li class="nav-item" data-section="about">
+            <span class="nav-icon">ℹ️</span>
+            <span class="nav-text">About</span>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- User info at bottom of sidebar -->
+      <div class="sidebar-footer">
+        <div class="user-info" id="userInfo">
+          <!-- TODO: Display user email and avatar -->
+          <div class="user-avatar" id="userAvatar"></div>
+          <div class="user-details">
+            <p class="user-email" id="userEmail">Not signed in</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA
+         Different sections loaded based on sidebar navigation
+         ====================================================================== -->
+    <main class="main-content">
+
+      <!-- ==================================================================
+           EXPANSIONS SECTION
+           - Full list of all expansions
+           - Advanced management features
+           - Bulk actions
+           ================================================================== -->
+      <section id="expansions-section" class="settings-section active">
+        <header class="section-header">
+          <h2>Manage Expansions</h2>
+          <div class="header-actions">
+            <button class="btn btn-secondary" id="importExpansionsBtn">Import</button>
+            <button class="btn btn-secondary" id="exportExpansionsBtn">Export</button>
+            <button class="btn btn-primary" id="addNewExpansionBtn">+ Add New</button>
+          </div>
+        </header>
+
+        <!-- Search and filter -->
+        <div class="expansions-toolbar">
+          <input
+            type="text"
+            class="search-input"
+            id="expansionsSearchInput"
+            placeholder="Search expansions..."
+          >
+          <div class="filter-controls">
+            <label>
+              <input type="checkbox" id="filterEnabled" checked>
+              Show enabled
+            </label>
+            <label>
+              <input type="checkbox" id="filterDisabled" checked>
+              Show disabled
+            </label>
+          </div>
+        </div>
+
+        <!-- Expansions table -->
+        <div class="expansions-table-container">
+          <table class="expansions-table" id="expansionsTable">
+            <thead>
+              <tr>
+                <th>
+                  <input type="checkbox" id="selectAllCheckbox">
+                </th>
+                <th>Shortcut</th>
+                <th>Expansion</th>
+                <th>Status</th>
+                <th>Last Modified</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="expansionsTableBody">
+              <!-- TODO: Populate with expansion rows -->
+            </tbody>
+          </table>
+
+          <!-- Empty state -->
+          <div class="empty-state" id="expansionsEmptyState" style="display: none;">
+            <p>No expansions found</p>
+          </div>
+        </div>
+
+        <!-- Bulk actions (shown when items selected) -->
+        <div class="bulk-actions" id="bulkActions" style="display: none;">
+          <span class="selected-count" id="selectedCount">0 selected</span>
+          <button class="btn btn-sm" id="bulkEnableBtn">Enable</button>
+          <button class="btn btn-sm" id="bulkDisableBtn">Disable</button>
+          <button class="btn btn-sm btn-danger" id="bulkDeleteBtn">Delete</button>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           ACCOUNT SECTION
+           - Sign in/sign up
+           - Account details
+           - Sign out
+           ================================================================== -->
+      <section id="account-section" class="settings-section">
+        <header class="section-header">
+          <h2>Account</h2>
+        </header>
+
+        <!-- Not signed in state -->
+        <div class="account-not-signed-in" id="accountNotSignedIn">
+          <p>Sign in to sync your expansions across devices</p>
+
+          <!-- Sign in form -->
+          <div class="auth-form" id="signInForm">
+            <h3>Sign In</h3>
+            <div class="form-group">
+              <label for="signInEmail">Email</label>
+              <input type="email" id="signInEmail" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="signInPassword">Password</label>
+              <input type="password" id="signInPassword" class="form-input" required>
+            </div>
+            <button class="btn btn-primary" id="signInBtn">Sign In</button>
+            <p class="auth-toggle">
+              Don't have an account? <a href="#" id="showSignUpLink">Sign up</a>
+            </p>
+          </div>
+
+          <!-- Sign up form -->
+          <div class="auth-form" id="signUpForm" style="display: none;">
+            <h3>Create Account</h3>
+            <div class="form-group">
+              <label for="signUpEmail">Email</label>
+              <input type="email" id="signUpEmail" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="signUpPassword">Password</label>
+              <input type="password" id="signUpPassword" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="signUpPasswordConfirm">Confirm Password</label>
+              <input type="password" id="signUpPasswordConfirm" class="form-input" required>
+            </div>
+            <button class="btn btn-primary" id="signUpBtn">Create Account</button>
+            <p class="auth-toggle">
+              Already have an account? <a href="#" id="showSignInLink">Sign in</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Signed in state -->
+        <div class="account-signed-in" id="accountSignedIn" style="display: none;">
+          <div class="account-info">
+            <div class="info-row">
+              <span class="label">Email:</span>
+              <span class="value" id="accountEmail"></span>
+            </div>
+            <div class="info-row">
+              <span class="label">Member since:</span>
+              <span class="value" id="accountCreatedAt"></span>
+            </div>
+          </div>
+          <button class="btn btn-secondary" id="signOutBtn">Sign Out</button>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SYNC SECTION
+           - Sync status
+           - Sync settings
+           - Conflict resolution
+           ================================================================== -->
+      <section id="sync-section" class="settings-section">
+        <header class="section-header">
+          <h2>Sync Settings</h2>
+        </header>
+
+        <div class="setting-group">
+          <h3>Sync Status</h3>
+          <div class="sync-status-display" id="syncStatusDisplay">
+            <!-- TODO: Show last sync time, status, statistics -->
+          </div>
+          <button class="btn btn-primary" id="syncNowBtn">Sync Now</button>
+        </div>
+
+        <div class="setting-group">
+          <h3>Automatic Sync</h3>
+          <label class="toggle-label">
+            <input type="checkbox" id="autoSyncToggle" checked>
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">Enable automatic sync</span>
+          </label>
+          <p class="setting-description">
+            Automatically sync changes with the cloud
+          </p>
+        </div>
+
+        <div class="setting-group">
+          <h3>Sync Interval</h3>
+          <select id="syncIntervalSelect" class="form-select">
+            <option value="30000">30 seconds</option>
+            <option value="60000" selected>1 minute</option>
+            <option value="300000">5 minutes</option>
+            <option value="600000">10 minutes</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <h3>Conflict Resolution</h3>
+          <select id="conflictResolutionSelect" class="form-select">
+            <option value="last-write-wins" selected>Last write wins</option>
+            <option value="local-first">Local first</option>
+            <option value="remote-first">Remote first</option>
+            <option value="ask">Ask me</option>
+          </select>
+          <p class="setting-description">
+            How to handle conflicts when the same expansion is edited on multiple devices
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           PREFERENCES SECTION
+           - General settings
+           - Behavior customization
+           ================================================================== -->
+      <section id="preferences-section" class="settings-section">
+        <header class="section-header">
+          <h2>Preferences</h2>
+        </header>
+
+        <div class="setting-group">
+          <h3>Expansion Behavior</h3>
+
+          <label class="toggle-label">
+            <input type="checkbox" id="caseSensitiveToggle">
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">Case sensitive shortcuts</span>
+          </label>
+
+          <label class="toggle-label">
+            <input type="checkbox" id="requireSpaceToggle" checked>
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">Require space/enter to trigger</span>
+          </label>
+
+          <label class="toggle-label">
+            <input type="checkbox" id="showPreviewToggle" checked>
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">Show expansion preview</span>
+          </label>
+        </div>
+
+        <div class="setting-group">
+          <h3>Trigger Keys</h3>
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" id="triggerSpaceKey" checked>
+              Space
+            </label>
+            <label>
+              <input type="checkbox" id="triggerEnterKey" checked>
+              Enter
+            </label>
+            <label>
+              <input type="checkbox" id="triggerTabKey">
+              Tab
+            </label>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>Notifications</h3>
+          <label class="toggle-label">
+            <input type="checkbox" id="showNotificationsToggle" checked>
+            <span class="toggle-switch"></span>
+            <span class="toggle-text">Show notifications</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           IMPORT/EXPORT SECTION
+           - Import expansions from file/JSON
+           - Export expansions to file/JSON
+           - Backup/restore
+           ================================================================== -->
+      <section id="import-export-section" class="settings-section">
+        <header class="section-header">
+          <h2>Import/Export</h2>
+        </header>
+
+        <div class="setting-group">
+          <h3>Export Expansions</h3>
+          <p class="setting-description">
+            Export all your expansions as a JSON file for backup or sharing
+          </p>
+          <button class="btn btn-primary" id="exportToFileBtn">Export to File</button>
+        </div>
+
+        <div class="setting-group">
+          <h3>Import Expansions</h3>
+          <p class="setting-description">
+            Import expansions from a JSON file
+          </p>
+          <input type="file" id="importFileInput" accept=".json" style="display: none;">
+          <button class="btn btn-secondary" id="importFromFileBtn">Import from File</button>
+        </div>
+
+        <div class="setting-group">
+          <h3>JSON Preview</h3>
+          <textarea
+            id="jsonPreview"
+            class="json-textarea"
+            placeholder="Paste JSON here to import..."
+            rows="10"
+          ></textarea>
+          <button class="btn btn-secondary" id="importFromJsonBtn">Import JSON</button>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           ABOUT SECTION
+           - Extension info
+           - Version
+           - Links
+           - Credits
+           ================================================================== -->
+      <section id="about-section" class="settings-section">
+        <header class="section-header">
+          <h2>About Text Expander</h2>
+        </header>
+
+        <div class="about-content">
+          <p class="about-description">
+            A powerful text expansion extension that syncs across all your devices.
+          </p>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">Version:</span>
+              <span class="info-value">1.0.0</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Last Updated:</span>
+              <span class="info-value">2025-01-01</span>
+            </div>
+          </div>
+
+          <div class="links-section">
+            <h3>Links</h3>
+            <ul class="links-list">
+              <li><a href="#" class="link">Documentation</a></li>
+              <li><a href="#" class="link">Privacy Policy</a></li>
+              <li><a href="#" class="link">Terms of Service</a></li>
+              <li><a href="#" class="link">Report an Issue</a></li>
+            </ul>
+          </div>
+
+          <div class="reset-section">
+            <h3>Danger Zone</h3>
+            <button class="btn btn-danger" id="resetAllBtn">Reset All Settings</button>
+            <p class="warning-text">
+              ⚠️ This will delete all your local data and settings. This action cannot be undone.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ========================================================================
+       MODALS
+       ======================================================================== -->
+
+  <!-- Add/Edit Expansion Modal (same as popup) -->
+  <div id="expansionModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add Expansion</h2>
+        <button class="close-btn" id="closeModalBtn">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="expansionForm">
+          <div class="form-group">
+            <label for="shortcutInput">Shortcut</label>
+            <input type="text" id="shortcutInput" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label for="expansionInput">Expansion</label>
+            <textarea id="expansionInput" class="form-textarea" rows="6" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="toggle-label">
+              <input type="checkbox" id="enabledToggle" checked>
+              <span class="toggle-switch"></span>
+              <span class="toggle-text">Enabled</span>
+            </label>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+        <button class="btn btn-primary" id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="notificationToast" class="notification-toast" style="display: none;">
+    <span id="notificationMessage"></span>
+  </div>
+
+  <!-- JavaScript module -->
+  <script type="module" src="options.js"></script>
+</body>
+</html>
